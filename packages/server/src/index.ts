@@ -59,9 +59,17 @@ app.post('/auth', async (req, res) => {
 app.get('/test', (_req, res) => {
   res
     .contentType('text/plain')
-    .header({ 'Access-Control-Allow-Origin': '*' })
+    .set({ 'Access-Control-Allow-Origin': '*' })
     .status(200)
     .send('test response 1');
+});
+
+app.get('/test2', (_req, res) => {
+  res
+    .contentType('application/json')
+    .set({ 'Access-Control-Allow-Origin': '*' })
+    .status(200)
+    .send({ test: 'response 2' });
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
