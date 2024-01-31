@@ -18,7 +18,7 @@ steps:
   - task: NodeTool@0
     displayName: Node install
     inputs:
-      versionSpec: '^16.0.0'
+      versionSpec: '^20.0.0'
 
   - script: npm ci
     displayName: npm install

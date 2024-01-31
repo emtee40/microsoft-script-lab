@@ -58,6 +58,7 @@ app.listen(port, () => console.log(`Listening on port ${port}`));
 app.get('/test', (_req, res) => {
   res
     .contentType('text/plain')
+    .header('Access-Control-Allow-Origin', '*')
     .status(200)
     .send('test response 1');
 });
